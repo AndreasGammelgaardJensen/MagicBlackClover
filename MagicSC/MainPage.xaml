@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MagicSC.MainPage"
+             xmlns:viewmodel="clr-namespace:MagicSC.ViewModels"
+             Title="Empty">
+
+
+    <StackLayout Padding="10">
+        <Button Text="Capture and Analyze Card" Command="{Binding CaptureAndAnalyzeCardCommand}" />
+        <Label Text="{Binding Result}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,6 @@
+@MagicScanner.API_HostAddress = http://localhost:5212
+
+GET {{MagicScanner.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
