@@ -33,10 +33,10 @@ namespace MagicScanner.API.ControllerExtensions
 				{
 					return Results.BadRequest("Invalid request. Please provide an ID and an image file.");
 				}
-				
 
 				var analyser = httpContext.RequestServices.GetRequiredService<IAnalyseImage>();
-				await HandleImageExtraction.HandleImageExtractionHandler(analyseModel.userId, analyseModel.binaryData, analyser);
+				var extractio = httpContext.RequestServices.GetRequiredService<HandleImageExtraction>(); 
+				await extractio.HandleImageExtractionHandler(analyseModel.userId, analyseModel.collectionId, analyseModel.binaryData, analyser);
 
 				return Results.Ok();
 			})
@@ -61,6 +61,11 @@ namespace MagicScanner.API.ControllerExtensions
 										Type = "string",
 										Description = "The collection ID"
 									},
+									["userid"] = new OpenApiSchema
+									{
+										Type = "string",
+										Description = "The user ID"
+									},
 									["image"] = new OpenApiSchema
 									{
 										Type = "string",
@@ -83,6 +88,7 @@ namespace MagicScanner.API.ControllerExtensions
 			var form = await context.Request.ReadFormAsync();
 			var id = Guid.Parse(form["id"].ToString());
 			var file = form.Files["image"];
+			var userId = Guid.Parse(form["userid"].ToString());
 
 			using var stream = file.OpenReadStream();
 			using var memoryStream = new MemoryStream();
@@ -92,7 +98,8 @@ namespace MagicScanner.API.ControllerExtensions
 			// Return the model
 			return new AnalysePostModel
 			{
-				userId = id,
+				collectionId = id,
+				userId = userId,
 				binaryData = binaryData
 			};
 		}
@@ -101,6 +108,7 @@ namespace MagicScanner.API.ControllerExtensions
 	internal class AnalysePostModel
 	{
 		public Guid userId { get; set; }
+		public Guid collectionId { get; set; }
 		public BinaryData? binaryData { get; set; }
 	}
 }

@@ -17,6 +17,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicScanner.API", "..\Magi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MagicSCTests", "..\MagicSCTests\MagicSCTests.csproj", "{3312BB58-598D-49C9-9469-867BAC00B0CC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Functions", "Functions", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateMGTFunc", "..\CreateMGTFunc\CreateMGTFunc.csproj", "{1D51C01D-8B08-43B2-95B4-2111FB2E6A37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{DF01B3FF-553C-4138-B3A0-BEDDBB0C90E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,9 +64,20 @@ Global
 		{3312BB58-598D-49C9-9469-867BAC00B0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3312BB58-598D-49C9-9469-867BAC00B0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3312BB58-598D-49C9-9469-867BAC00B0CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D51C01D-8B08-43B2-95B4-2111FB2E6A37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D51C01D-8B08-43B2-95B4-2111FB2E6A37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D51C01D-8B08-43B2-95B4-2111FB2E6A37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D51C01D-8B08-43B2-95B4-2111FB2E6A37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF01B3FF-553C-4138-B3A0-BEDDBB0C90E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF01B3FF-553C-4138-B3A0-BEDDBB0C90E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF01B3FF-553C-4138-B3A0-BEDDBB0C90E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF01B3FF-553C-4138-B3A0-BEDDBB0C90E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1D51C01D-8B08-43B2-95B4-2111FB2E6A37} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E18A218-1309-4C9E-9EC2-C29C4DC83CE8}

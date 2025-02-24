@@ -44,11 +44,6 @@ namespace MagicScannerLib.ComputerVision
 			list = GeometryHelper.RemoveLineIfTextContainsNumber(list);
 
 			var centroids = list.Select(line => line.GetCentroid()).ToList();
-			var extremes = FindExtremes(centroids);
-			var average = CalculateAverageCoordinates(centroids);
-			var avgXDistance = CalculateAverageXDistance(centroids, extremes.smallestX.X);
-			var avgY = CalculateAverageYDistance(centroids, extremes.smallestY.Y);
-			var avg = (extremes.smallestX.X + extremes.smallestY.Y) / 2;
 			// Remove centroids that are too close to each other
 			//How to select the value that is smalles? 
 
