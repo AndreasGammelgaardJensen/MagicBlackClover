@@ -29,7 +29,7 @@ namespace MagicSC.ViewModels
 				var byteArray = memoryStream.ToArray();
 				var binaryData = new BinaryData(byteArray);
 
-				var response = await _imageAnalysisService.UploadImageAsync("analyse", Guid.NewGuid(), stream, "GIVE ME A NEW NAME");
+				var response = await _imageAnalysisService.UploadImageAsync("analyse", Guid.NewGuid(), Guid.NewGuid(), stream, "GIVE ME A NEW NAME");
 				if (response.IsSuccessStatusCode)
 				{
 					var result = await response.Content.ReadAsStringAsync();

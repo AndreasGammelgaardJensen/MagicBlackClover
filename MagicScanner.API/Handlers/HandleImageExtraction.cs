@@ -6,6 +6,7 @@ using MagicScannerLib.Models;
 using MagicScannerLib.Models.Database;
 using Microsoft.Azure.Amqp.Framing;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text.Json;
 
@@ -60,20 +61,22 @@ namespace MagicScanner.API.Handlers
 			var messages = SerializeConvertToJsonMessages(scanItems);
 			await _serviceBusHandler.SendRangeMessageAsync(messages, MagicQueue.createQueue);
 
-
-
-
-
-			//Store all names to database and add processeng
-
-			//Add to queue
-
-			//Create and ordernumber and navigate to that page
-
-			//Join and return all test
 			Console.WriteLine($"Number of Cards: {reconisedCards.Lines.Count}\n" + string.Join("\n", reconisedCards.Lines.Select(line => line.Text)));
+		}
 
+		public async Task<ScanDatabaseModel> GetScanById(Guid id)
+		{
+			var scan = await _dbcontext.Scans
+				.Include(x => x.ScanItems)
+				.Include(x => x.Collection)
+				.FirstOrDefaultAsync(x => x.Id == id);
 
+			if (scan == null)
+			{
+				throw new Exception("Scan not found");
+			}
+
+			return scan;
 
 		}
 

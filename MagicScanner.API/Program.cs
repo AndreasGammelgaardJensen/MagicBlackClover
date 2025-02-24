@@ -32,6 +32,7 @@ builder.Services.AddDbContextFactory<DataContext>(options =>
 
 
 builder.Services.AddScoped<IAnalyseImage,ImageTextRecognitionAnalyser>();
+builder.Services.AddScoped<CollectionHandler>();
 builder.Services.AddSingleton<HandleImageExtraction>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -59,6 +60,7 @@ var summaries = new[]
 };
 
 app.AddVisionEndpoints();
+app.AddCollectionEndpoints();
 
 app.MapGet("/weatherforecast", (HttpContext httpContext) =>
 {

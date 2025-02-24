@@ -22,7 +22,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<ImageAnalysisViewModel>();
 		builder.Services.AddHttpClient<ImageAnalysisService>(client =>
 		{
-			client.BaseAddress = new Uri("http://10.0.2.2:5212");
+			client.BaseAddress = new Uri("https://brs0qj9k-7263.euw.devtunnels.ms");
 		});      //Add httpclient
 #if DEBUG
 		builder.Logging.AddDebug();

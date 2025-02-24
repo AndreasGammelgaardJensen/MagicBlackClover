@@ -16,10 +16,11 @@ namespace MagicSC.Services
 			_httpClient = httpClient;
 		}
 
-		public async Task<HttpResponseMessage> UploadImageAsync(string url, Guid id, Stream imageStream, string fileName)
+		public async Task<HttpResponseMessage> UploadImageAsync(string url, Guid id,Guid userid, Stream imageStream, string fileName)
 		{
 			using var content = new MultipartFormDataContent();
 			content.Add(new StringContent(id.ToString()), "id");
+			content.Add(new StringContent(userid.ToString()), "userid");
 
 			var imageContent = new StreamContent(imageStream);
 			imageContent.Headers.ContentType = new MediaTypeHeaderValue("multipart/form-data");

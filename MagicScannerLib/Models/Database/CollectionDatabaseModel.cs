@@ -10,5 +10,7 @@ namespace MagicScannerLib.Models.Database
 	{
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
+        public string CollectionName { get; set; }
+        public List<CollectionCardsDatabaseModel> CollectionCards { get; set; }
     }
 }
