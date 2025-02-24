@@ -22,7 +22,7 @@ var host = new HostBuilder()
 		services.AddSingleton<ServiceBusHandler>(sp =>
 		{
 			var serviceBusSettings = sp.GetRequiredService<IOptions<ServiceBusSettings>>().Value;
-			return new ServiceBusHandler("Endpoint = sb://sb-magiccard.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=QGIj+EE5Joow8J0hC3zrI/GnFKUIrsef6+ASbLndeEw=");
+			return new ServiceBusHandler("");
 		});
 
 		//Add httpclient that add this https://api.magicthegathering.io/v1/ as base address
