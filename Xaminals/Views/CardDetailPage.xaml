@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xaminals.Views.CardDetailPage"
+             Title="CardDetailPage">
+    <ScrollView>
+        <StackLayout Margin="20">
+            <Label Text="{Binding Card.Name}" 
+               HorizontalOptions="Center" 
+               Style="{DynamicResource TitleStyle}" />
+
+            <Image Source="{Binding Card.ImageUrl}" 
+               HeightRequest="200" 
+               WidthRequest="200" 
+               HorizontalOptions="Center" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

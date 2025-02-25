@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="Xaminals.Views.CollectionDetailPage"
+                x:Name="self"
+                Title="Collection Details">
+    
+    <AbsoluteLayout x:Name="absoluteLayout">
+        <CollectionView Margin="20"
+                        ItemsSource="{Binding CollectionCards}"
+                        ItemTemplate="{StaticResource AnimalTemplate}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedCard}" />
+
+
+        <Button Text="+"
+            BackgroundColor="DodgerBlue"
+            TextColor="White"
+            CornerRadius="30"
+            WidthRequest="60"
+            HeightRequest="60"
+            AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Command="{Binding FloatingButtonCommand}" />
+
+        <AbsoluteLayout.GestureRecognizers>
+            <TapGestureRecognizer Tapped="OnAbsoluteLayoutTapped" />
+        </AbsoluteLayout.GestureRecognizers>
+    </AbsoluteLayout>
+
+</ContentPage>
+   

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xaminals.Views.CollectionsPage"
+            xmlns:vm="clr-namespace:Xaminals.ViewModels"
+             Title="CollectionsPage">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                      Value="#689F39" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <!--<Shell.SearchHandler>
+        <controls:AnimalSearchHandler Placeholder="Enter search term"
+                                    ShowsResults="true"
+                                    ItemTemplate="{StaticResource AnimalSearchTemplate}"
+                                    Animals="{x:Static data:CollectionItems}"
+                                    SelectedItemNavigationTarget="{x:Type views:CollectionDetailPage}" />
+    </Shell.SearchHandler>-->
+
+    <CollectionView Margin="20"
+                 ItemsSource="{Binding CollectionItems}"
+                  ItemTemplate="{StaticResource AnimalTemplate}"
+                  SelectionMode="Single"
+                SelectedItem="{Binding SelectedCollection}"/>
+</ContentPage>

@@ -6,10 +6,13 @@
     xmlns:local="clr-namespace:MagicSC"
     Shell.FlyoutBehavior="Disabled"
     Title="MagicSC">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    <FlyoutItem Title="Page 1" Icon="icon1.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Page 2" Icon="icon2.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+    </FlyoutItem>
+    <FlyoutItem Title="Page 3" Icon="icon3.png">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage"/>
+    </FlyoutItem>
 </Shell>
